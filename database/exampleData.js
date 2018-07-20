@@ -1,15 +1,4 @@
-var generateObj = function() {
-	var array = [];
-	for (var i = 26; i <= 50; i++) {
-		array.push({id: i, name: ''})
-	}
-	return array;
-}
-
-JSON.stringify(generateObj());
-
-//$$
-var data = [ 
+var exampleData = [ 
 	{ id: 1, name: 'Tacorea' },
   { id: 2, name: 'Golden Boy Pizza' },
   { id: 3, name: 'Hot Sauce and Panko' },
@@ -111,28 +100,3 @@ var data = [
   { id: 99, name: "Eight Tables by George Chen"},
   { id: 100, name: "Jardiniere" } 
 ];
-
-// returns true if keys are uniq, returns false if keys are not uniq
-//input array of objects, property (string)
-var uniqName = function (arr, prop) {
-	var uniq = {};
-	for (var i = 0; i < arr.length; i++) {
-		if (typeof uniq[arr[i].prop] === 'undefined') {
-			uniq[arr[i].name] = 1;
-		} else {
-			uniq[arr[i].name] += 1;
-		}
-	}
-	var isUniq = true;
-	for (var key in uniq) {
-		if (uniq[key] > 1)  {
-			isUniq = false;
-			return isUniq;
-		}
-	}
-	return isUniq;
-	// return uniq;
-}
-
-
-uniqName(data, 'name');
