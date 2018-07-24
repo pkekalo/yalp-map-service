@@ -1,13 +1,48 @@
 <html>
-	<head>
-		<title>Yalp web Page</title>
-		<link rel="stylesheet" href="style.css"></link>
-	</head>
-	<body>
-		<h1>Yalp web Page</h1>
-		<div>
-			<p>My Map here... </p>
-		</div>
- 		<script src="bundle.js"></script>
-	</body>
+  <head>
+    <title>Yalp web Page</title>
+    <link rel="stylesheet" href="style.css"></link>
+  </head>
+  <body>
+    <h1>Yalp web Page</h1>
+    <div id="info">
+      <div id="map"> 
+        <p>My Map is here... </p>
+      </div>
+        <p>My info is here...
+          <br/>
+          <br/>
+          <span>Located in:</span>
+          87, random street, RandomCity, CA, 09992
+          <br/>
+          <br/>
+          <span>Phone number:</span> (888) 888-8888
+          <br/>
+          <br/>
+          <span>Business:</span> randomfood.com
+        </p>
+      </div>
+    <script>
+function initMap() {
+  // Map options
+  var options = {
+    zoom: 14,
+    center: {lat:37.773972, lng:-122.43129}
+  };
+
+  // New map
+  var map = new google.maps.Map(document.getElementById('map'), options);
+
+  // Add marker 
+  var maker = new google.maps.Marker({
+    position : {lat:37.773972, lng:-122.43129},
+    map : map
+  });
+
+
+}
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKKhjAF1WKde6SDqlyvszG-cq65xke9v0&callback=initMap"></script>
+    <script src="bundle.js"></script>
+  </body>
 </html>
