@@ -1,12 +1,14 @@
-var express = require('express');
-var app = express();
- 
-app.use(express.static(__dirname + '/../client'))
+const express = require('express');
+const path = require('path');
 
-app.get('/', function (req, res) {
-  res.end();
-})
- 
-app.listen(3001, function() {
-	console.log("Listening on port 3001..."); 
-});
+const app = express();
+
+app.use(express.static(path.join(__dirname, '/../client')));
+
+app.get('/', (req, res) => (
+  res.end()
+));
+
+app.listen(3001, () => (
+  console.log('Listening on port 3001...')
+));
